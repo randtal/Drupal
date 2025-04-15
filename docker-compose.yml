@@ -1,0 +1,17 @@
+# Antud töö on koostatud koolitöö raames!
+
+services:
+  drupal:
+    image: drupal:latest
+    ports:
+      - '8081:80'
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: drupal
+      MARIADB_USER: drupal
+      MARIADB_PASSWORD: drupal
